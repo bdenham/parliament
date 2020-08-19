@@ -77,7 +77,7 @@ module.exports = {
             options: {
               directory: `${
                 process.env.NODE_ENV === `development`
-                  ? `${projectRootDir}/src/content`
+                  ? `${path.join(projectRootDir, "../")}docs`
                   : `${projectRootDir}/.cache/gatsby-source-git/`
               }`,
             },

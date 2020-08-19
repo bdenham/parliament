@@ -11,17 +11,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${projectRootDir}/src/content`,
+        name: `docs`,
+        path: `${path.join(projectRootDir, "../")}docs`,
       },
     },
-    {
-      resolve: `link-local-project`,
-      options: {
-        contentDir: `${projectRootDir}/src/content`,
-        localProjectDir: process.env.LOCAL_PROJECT_DIRECTORY,
-        patterns: process.env.GATSBY_SOURCE_PATTERNS,
-      },
-    },
+    // {
+    //   resolve: `link-local-project`,
+    //   options: {
+    //     contentDir: `${projectRootDir}/src/content`,
+    //     localProjectDir: process.env.LOCAL_PROJECT_DIRECTORY,
+    //     patterns: process.env.GATSBY_SOURCE_PATTERNS,
+    //   },
+    // },
   ],
 }
