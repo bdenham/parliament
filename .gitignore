@@ -70,8 +70,8 @@ yarn-error.log
 
 
 # Environment file
-.env.development
-.env.production
+# .env.development
+# .env.production
 cypress.env.json
 
 # External content directory for local dev
