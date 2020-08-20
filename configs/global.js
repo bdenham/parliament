@@ -5,6 +5,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+console.log(`Prefix Path: ${process.env.GATSBY_SITE_PATH_PREFIX}`)
+
 module.exports = {
   pathPrefix: `${process.env.GATSBY_SITE_PATH_PREFIX}`,
   siteMetadata: {
