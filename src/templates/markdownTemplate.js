@@ -49,9 +49,8 @@ const MarkdownTemplate = ({ data, location, pageContext }) => {
           />
         </GridNav>
         <GridContent id="contentMain">
-          <GridContentInner>
+          <GridContentInner className="DocSearch-content">
             <div
-              className="DocSearch-content"
               css={css`
                 float: right;
                 z-index: 100;
