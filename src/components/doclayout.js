@@ -28,7 +28,7 @@ import "./layout.css"
 const DocLayout = ({ children }) => {
   return (
     <Provider theme={theme} colorScheme="light" scale="medium">
-      <main>{children}</main>
+      <main className="DocSearch-content">{children}</main>
     </Provider>
   )
 }
