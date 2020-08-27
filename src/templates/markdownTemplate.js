@@ -51,6 +51,7 @@ const MarkdownTemplate = ({ data, location, pageContext }) => {
         <GridContent id="contentMain">
           <GridContentInner>
             <div
+              className="DocSearch-content"
               css={css`
                 float: right;
                 z-index: 100;
@@ -116,7 +117,7 @@ export const query = graphql`
       relativePath
       childMdx {
         body
-        tableOfContents(maxDepth:3)
+        tableOfContents(maxDepth: 3)
         timeToRead
       }
     }
