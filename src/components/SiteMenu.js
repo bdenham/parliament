@@ -13,22 +13,14 @@
 /** @jsx jsx */
 import { css, jsx } from "@emotion/core"
 import PropTypes from "prop-types"
-import { graphql, Link, useStaticQuery } from "gatsby"
-import { Nav, Search } from "@adobe/parliament-ui-components"
-
+import { Link } from "gatsby"
+import { Nav } from "@adobe/parliament-ui-components"
+import { SearchField } from "@adobe/react-spectrum"
 import Title from "./Title"
 
 import "./sitenav.css"
 
 const SiteMenu = ({ gitRemote, forceMobile, currentPage, pages, isMobile }) => {
-  const { ParliamentSearchIndex } = useStaticQuery(
-    graphql`
-      query {
-        ParliamentSearchIndex
-      }
-    `
-  )
-
   const gitInfo = {
     org: gitRemote.organization,
     name: gitRemote.name,
@@ -60,8 +52,11 @@ const SiteMenu = ({ gitRemote, forceMobile, currentPage, pages, isMobile }) => {
             margin-top: 24px;
           `}
         >
-          <Search searchIndex={ParliamentSearchIndex} />
-          <input id="mydocsearch" className="mydocsearch"></input>
+          <SearchField
+            placeholder="Search for topic..."
+            label="DocSearch"
+            id="mydocsearch"
+          />
         </div>
       </div>
       <div

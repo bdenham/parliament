@@ -152,8 +152,8 @@ module.exports = {
       options: {
         apiKey: `63fd05c5e157b32f13aa0b92fa16b2b2`, // required
         indexName: `magento2_page-builder`, // required
-        inputSelector: `mydocsearch`, // required
-        debug: true, // (bool) Optional. Default `false`
+        inputSelector: `#mydocsearch`, // required
+        debug: false, // (bool) Optional. Default `false`
       },
     },
   ],
