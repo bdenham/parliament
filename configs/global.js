@@ -152,7 +152,7 @@ module.exports = {
       options: {
         apiKey: `63fd05c5e157b32f13aa0b92fa16b2b2`, // required
         indexName: `magento2_page-builder`, // required
-        inputSelector: `#mydocsearch`, // required
+        inputSelector: `#editing-view-port`, // required
         debug: false, // (bool) Optional. Default `false`
       },
     },
