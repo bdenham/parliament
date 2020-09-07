@@ -5,14 +5,12 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-console.log(`Prefix Path: ${process.env.GATSBY_SITE_PATH_PREFIX}`)
-
 module.exports = {
   pathPrefix: `${process.env.GATSBY_SITE_PATH_PREFIX}`,
   siteMetadata: {
     title: `${process.env.GATSBY_SOURCE_TITLE}`,
-    description: `Page Builder developer documentation. Learn how Page Builder works and how you can customize it to build beautiful storefronts.`,
-    author: `Page Builder team`,
+    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    author: `@gatsbyjs`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -79,7 +77,7 @@ module.exports = {
             options: {
               directory: `${
                 process.env.NODE_ENV === `development`
-                  ? `${path.join(projectRootDir, "../")}docs`
+                  ? `${projectRootDir}/src/content`
                   : `${projectRootDir}/.cache/gatsby-source-git/`
               }`,
             },

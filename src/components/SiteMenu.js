@@ -54,7 +54,7 @@ const SiteMenu = ({ gitRemote, forceMobile, currentPage, pages, isMobile }) => {
         >
           <SearchField
             id="mydocsearch"
-            className="mydocsearch"
+            label="Docs Search"
             placeholder="Search for topic..."
           />
         </div>
