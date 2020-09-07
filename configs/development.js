@@ -11,8 +11,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `external`,
-        path: `${projectRootDir}/src/content`,
+        name: `docs`,
+        path: `${path.join(projectRootDir, "../")}docs`,
       },
     },
     // {
@@ -23,12 +23,5 @@ module.exports = {
     //     patterns: process.env.GATSBY_SOURCE_PATTERNS,
     //   },
     // },
-    {
-      resolve: `swagger-to-graphql-source`,
-      options: {
-        contentRoot: path.resolve(path.dirname(__dirname), "src/content"),
-        sourcePatterns: process.env.SWAGGER_SOURCE_PATTERNS,
-      },
-    },
   ],
 }

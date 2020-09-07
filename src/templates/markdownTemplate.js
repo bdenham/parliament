@@ -49,7 +49,7 @@ const MarkdownTemplate = ({ data, location, pageContext }) => {
           />
         </GridNav>
         <GridContent id="contentMain">
-          <GridContentInner>
+          <GridContentInner className="DocSearch-content">
             <div
               css={css`
                 float: right;
@@ -116,7 +116,7 @@ export const query = graphql`
       relativePath
       childMdx {
         body
-        tableOfContents(maxDepth:3)
+        tableOfContents(maxDepth: 3)
         timeToRead
       }
     }
