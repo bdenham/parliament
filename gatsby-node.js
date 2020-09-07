@@ -78,18 +78,30 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === `Mdx`) {
     let slug = ""
+    switch (environment) {
+      case "production":
+        if (node.fileAbsolutePath.lastIndexOf("gatsby-source-git/") > -1) {
+          slug = node.fileAbsolutePath.substring(
+            node.fileAbsolutePath.lastIndexOf("gatsby-source-git/") + 18
+          )
+        } else if (node.frontmatter.path) {
+          slug = node.frontmatter.path
+        }
+        break
+      case "development":
+        const localFilePath = path.relative(__dirname, node.fileAbsolutePath)
+        const directories = localFilePath.split(path.sep)
 
-    if (node.fileAbsolutePath.lastIndexOf("gatsby-source-git/") > -1) {
-      slug = node.fileAbsolutePath.substring(
-        node.fileAbsolutePath.lastIndexOf("gatsby-source-git/") + 18
-      )
-      console.log("exports.onCreateNode -> slug", slug)
-    } else {
-      const localFilePath = path.relative(__dirname, node.fileAbsolutePath)
-      const directories = localFilePath.split(path.sep)
+        // Remove src/content prefix from slug
+        if (localFilePath.startsWith("src/content")) {
+          // Remove src
+          directories.shift()
+          // Remove content
+          directories.shift()
+        }
 
-      slug = path.join("/", ...directories)
-      console.log("exports.onCreateNode -> slug", slug)
+        slug = path.join("/", ...directories)
+        break
     }
 
     createNodeField({
@@ -299,7 +311,7 @@ const createOpenApiPage = async (
         const directories = localFilePath.split(path.sep)
 
         // Remove src/content prefix from slug
-        if (localFilePath.startsWith("docs")) {
+        if (localFilePath.startsWith("src/content")) {
           // Remove src
           directories.shift()
           // Remove content

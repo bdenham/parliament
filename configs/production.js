@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path")
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
@@ -6,7 +6,10 @@ require("dotenv").config({
 
 const patterns = process.env.GATSBY_SOURCE_PATTERNS.split(",")
 
-const contentSourcePath = path.resolve(path.dirname(__dirname), '.cache/gatsby-source-git');
+const contentSourcePath = path.resolve(
+  path.dirname(__dirname),
+  ".cache/gatsby-source-git"
+)
 
 module.exports = {
   plugins: [
@@ -25,8 +28,8 @@ module.exports = {
       resolve: `swagger-to-graphql-source`,
       options: {
         contentRoot: contentSourcePath,
-        sourcePatterns: process.env.SWAGGER_SOURCE_PATTERNS
+        sourcePatterns: process.env.SWAGGER_SOURCE_PATTERNS,
       },
-    }
+    },
   ],
 }

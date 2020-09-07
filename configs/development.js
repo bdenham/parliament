@@ -11,18 +11,18 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `docs`,
-        path: `${path.join(projectRootDir, "../")}docs`,
+        name: `external`,
+        path: `${projectRootDir}/src/content`,
       },
     },
-    // {
-    //   resolve: `link-local-project`,
-    //   options: {
-    //     contentDir: `${projectRootDir}/src/content`,
-    //     localProjectDir: process.env.LOCAL_PROJECT_DIRECTORY,
-    //     patterns: process.env.GATSBY_SOURCE_PATTERNS,
-    //   },
-    // },
+    {
+      resolve: `link-local-project`,
+      options: {
+        contentDir: `${projectRootDir}/src/content`,
+        localProjectDir: process.env.LOCAL_PROJECT_DIRECTORY,
+        patterns: process.env.GATSBY_SOURCE_PATTERNS,
+      },
+    },
     {
       resolve: `swagger-to-graphql-source`,
       options: {
@@ -30,13 +30,5 @@ module.exports = {
         sourcePatterns: process.env.SWAGGER_SOURCE_PATTERNS,
       },
     },
-    // {
-    //   resolve: `link-local-project`,
-    //   options: {
-    //     contentDir: `${projectRootDir}/src/content`,
-    //     localProjectDir: process.env.LOCAL_PROJECT_DIRECTORY,
-    //     patterns: process.env.GATSBY_SOURCE_PATTERNS,
-    //   },
-    // },
   ],
 }
