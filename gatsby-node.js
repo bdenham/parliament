@@ -93,7 +93,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
         const directories = localFilePath.split(path.sep)
 
         // Remove src/content prefix from slug
-        if (localFilePath.startsWith("src/content")) {
+        if (localFilePath.startsWith("docs")) {
           // Remove src
           directories.shift()
           // Remove content
@@ -311,7 +311,7 @@ const createOpenApiPage = async (
         const directories = localFilePath.split(path.sep)
 
         // Remove src/content prefix from slug
-        if (localFilePath.startsWith("src/content")) {
+        if (localFilePath.startsWith("docs")) {
           // Remove src
           directories.shift()
           // Remove content
