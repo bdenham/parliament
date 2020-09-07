@@ -61,6 +61,7 @@ const SiteMenu = ({ gitRemote, forceMobile, currentPage, pages, isMobile }) => {
           `}
         >
           <Search searchIndex={ParliamentSearchIndex} />
+          <input id="mydocsearch" className="mydocsearch"></input>
         </div>
       </div>
       <div
